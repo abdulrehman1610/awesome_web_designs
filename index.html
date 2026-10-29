@@ -1,0 +1,2699 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orvante — Monochrome Branding Agency</title>
+    <meta
+      name="description"
+      content="A strict monochrome editorial landing page for the fictional branding agency Orvante, featuring scroll-driven typography, Web Animations choreography, and precision artboard geometry."
+    />
+    <meta property="og:title" content="Orvante — Monochrome Branding Agency" />
+    <meta
+      property="og:description"
+      content="A strict monochrome editorial landing page for the fictional branding agency Orvante, featuring scroll-driven typography, Web Animations choreography, and precision artboard geometry."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter+Tight:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --u: min(calc(100vw / 1440), 1.333px);
+        --paper: #dadada;
+        --ink: #111111;
+        --black: #000000;
+        --text-light: #f4f4f4;
+        --stmt-grey: #6f6f6f;
+        --stats-bg: #cdcdcd;
+        --card-grey: #d6d6d6;
+        --card-dark: #262626;
+        --hairline-low: rgba(255, 255, 255, 0.14);
+        --hairline-mid: rgba(255, 255, 255, 0.2);
+        --hairline-high: rgba(255, 255, 255, 0.28);
+        --font-ui: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-display: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        background-color: var(--black);
+        color: var(--text-light);
+        font-family: var(--font-ui);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--black);
+        overflow-x: hidden;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+        color: inherit;
+        background: none;
+        border: none;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      img {
+        display: block;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+
+      /* Artboard shell */
+      .page-shell {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* ==========================================================================
+         SECTION 1: HERO (1440 x 938u)
+         ========================================================================== */
+      .hero-band {
+        width: 100%;
+        background-color: var(--paper);
+        color: var(--ink);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-artboard {
+        position: relative;
+        width: calc(1440 * var(--u));
+        height: calc(938 * var(--u));
+        margin: 0 auto;
+        overflow: hidden;
+        background-color: var(--paper);
+      }
+
+      /* Hero Photo: left 338u, top -86u, 764 x 1024u */
+      .hero-photo-wrap {
+        position: absolute;
+        left: calc(338 * var(--u));
+        top: calc(-86 * var(--u));
+        width: calc(764 * var(--u));
+        height: calc(1024 * var(--u));
+        pointer-events: none;
+        z-index: 1;
+        will-change: transform, opacity, filter;
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent 0%,
+          #000000 6%,
+          #000000 94%,
+          transparent 100%
+        );
+        mask-image: linear-gradient(
+          90deg,
+          transparent 0%,
+          #000000 6%,
+          #000000 94%,
+          transparent 100%
+        );
+      }
+
+      .hero-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        will-change: transform;
+      }
+
+      /* Nav Pill at (57, 61), 48u tall */
+      .hero-nav {
+        position: absolute;
+        left: calc(57 * var(--u));
+        top: calc(61 * var(--u));
+        height: calc(48 * var(--u));
+        background: #ffffff;
+        border-radius: calc(999 * var(--u));
+        padding: calc(4 * var(--u));
+        display: inline-flex;
+        align-items: center;
+        gap: calc(2 * var(--u));
+        z-index: 10;
+        box-shadow: 0 calc(2 * var(--u)) calc(10 * var(--u)) rgba(0, 0, 0, 0.04);
+        will-change: transform, opacity;
+      }
+
+      .nav-pill-slider {
+        position: absolute;
+        top: calc(4 * var(--u));
+        left: calc(4 * var(--u));
+        height: calc(40 * var(--u));
+        background: var(--ink);
+        border-radius: calc(999 * var(--u));
+        transition:
+          transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+          width 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .nav-link {
+        position: relative;
+        z-index: 1;
+        height: calc(40 * var(--u));
+        padding: 0 calc(20 * var(--u));
+        border-radius: calc(999 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(13.5 * var(--u));
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        text-decoration: none;
+      }
+
+      .nav-link.is-highlighted {
+        color: #ffffff;
+      }
+
+      .nav-link:focus-visible {
+        outline: 2px solid var(--ink);
+        outline-offset: 2px;
+      }
+
+      /* Top-right Date at (1038, 70) */
+      .hero-date {
+        position: absolute;
+        left: calc(1038 * var(--u));
+        top: calc(70 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(13 * var(--u));
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+        z-index: 5;
+        white-space: nowrap;
+      }
+
+      .hero-date-day {
+        display: block;
+        color: rgba(17, 17, 17, 0.56);
+        font-weight: 500;
+      }
+
+      .hero-date-full {
+        display: block;
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      /* Contact Us button: 144 x 46u at (1237, 63) */
+      .btn-contact {
+        position: absolute;
+        left: calc(1237 * var(--u));
+        top: calc(63 * var(--u));
+        width: calc(144 * var(--u));
+        height: calc(46 * var(--u));
+        background: var(--ink);
+        color: #ffffff;
+        border-radius: calc(999 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(13.5 * var(--u));
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: calc(7 * var(--u));
+        z-index: 10;
+        white-space: nowrap;
+        transition:
+          transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+          background-color 0.18s ease;
+      }
+
+      .btn-contact:hover,
+      .btn-book:hover,
+      .dark-card-cta:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-contact:focus-visible,
+      .btn-book:focus-visible {
+        outline: 2px solid var(--ink);
+        outline-offset: 3px;
+      }
+
+      .btn-arrow {
+        font-size: calc(13 * var(--u));
+        line-height: 1;
+        display: inline-block;
+        transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .btn-contact:hover .btn-arrow,
+      .btn-book:hover .btn-arrow,
+      .dark-card-cta:hover .btn-arrow {
+        transform: translate(1px, -1px);
+      }
+
+      /* Title: "PURE / DESIGN" at (57, 246), Archivo width 104%, weight 640, 90u, lh 0.86, tracking -0.06em */
+      .hero-title {
+        position: absolute;
+        left: calc(57 * var(--u));
+        top: calc(246 * var(--u));
+        font-family: var(--font-display);
+        font-size: calc(90 * var(--u));
+        font-weight: 640;
+        font-stretch: 104%;
+        font-variation-settings:
+          'wdth' 104,
+          'wght' 640;
+        line-height: 0.86;
+        letter-spacing: -0.06em;
+        color: var(--ink);
+        text-transform: uppercase;
+        z-index: 5;
+        user-select: none;
+      }
+
+      .title-line-mask {
+        display: block;
+        overflow: hidden;
+        padding-bottom: calc(4 * var(--u));
+        margin-bottom: calc(-4 * var(--u));
+      }
+
+      .title-line-inner {
+        display: block;
+        will-change: transform;
+      }
+
+      /* ('25) at (339, 272) */
+      .hero-year {
+        position: absolute;
+        left: calc(339 * var(--u));
+        top: calc(272 * var(--u));
+        font-family: var(--font-display);
+        font-size: calc(23 * var(--u));
+        font-weight: 600;
+        font-variation-settings:
+          'wdth' 104,
+          'wght' 600;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+        z-index: 5;
+        white-space: nowrap;
+      }
+
+      /* About section: "● (ABOUT)" at y 458, copy, then Book A Call at y 584 */
+      .hero-about-label {
+        position: absolute;
+        left: calc(57 * var(--u));
+        top: calc(458 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(13 * var(--u));
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--ink);
+        display: inline-flex;
+        align-items: center;
+        gap: calc(7 * var(--u));
+        z-index: 5;
+      }
+
+      .dot-glyph {
+        display: inline-block;
+        width: calc(6 * var(--u));
+        height: calc(6 * var(--u));
+        border-radius: 50%;
+        background: currentColor;
+      }
+
+      .hero-about-copy {
+        position: absolute;
+        left: calc(57 * var(--u));
+        top: calc(494 * var(--u));
+        width: calc(245 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(14 * var(--u));
+        font-weight: 500;
+        line-height: 1.42;
+        letter-spacing: -0.01em;
+        color: rgba(17, 17, 17, 0.82);
+        z-index: 5;
+      }
+
+      .btn-book {
+        position: absolute;
+        left: calc(57 * var(--u));
+        top: calc(584 * var(--u));
+        height: calc(44 * var(--u));
+        padding: 0 calc(22 * var(--u));
+        background: var(--ink);
+        color: #ffffff;
+        border-radius: calc(999 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(13.5 * var(--u));
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: calc(8 * var(--u));
+        z-index: 6;
+        white-space: nowrap;
+        transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* Stats frame at (57, 693), 341 x 208u, light grey #cdcdcd */
+      .stats-frame {
+        position: absolute;
+        left: calc(57 * var(--u));
+        top: calc(693 * var(--u));
+        width: calc(341 * var(--u));
+        height: calc(208 * var(--u));
+        background: var(--stats-bg);
+        border-radius: calc(10 * var(--u));
+        padding: calc(6 * var(--u));
+        display: grid;
+        grid-template-columns: calc(158 * var(--u)) 1fr;
+        gap: calc(6 * var(--u));
+        z-index: 6;
+      }
+
+      /* Left dark card inside stats-frame */
+      .stats-dark-card {
+        background: #121212;
+        color: #f4f4f4;
+        border-radius: calc(7 * var(--u));
+        padding: calc(11 * var(--u));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+      }
+
+      .stats-dark-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: calc(4 * var(--u));
+      }
+
+      .stats-num-400 {
+        font-family: var(--font-ui);
+        font-size: calc(24 * var(--u));
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .stats-label-partner {
+        font-family: var(--font-ui);
+        font-size: calc(10 * var(--u));
+        font-weight: 500;
+        color: rgba(244, 244, 244, 0.65);
+        white-space: nowrap;
+      }
+
+      /* 6 tiny fictional partner marks: Halcyon, Ostra, Fenwick, Monolo, Kitefly, Arbor */
+      .partner-marks-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: calc(5 * var(--u)) calc(4 * var(--u));
+        margin: calc(6 * var(--u)) 0;
+      }
+
+      .partner-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: calc(3 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(7.5 * var(--u));
+        font-weight: 500;
+        color: rgba(244, 244, 244, 0.72);
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .partner-chip svg {
+        width: calc(8 * var(--u));
+        height: calc(8 * var(--u));
+        flex-shrink: 0;
+        fill: currentColor;
+      }
+
+      .dark-card-cta {
+        width: 100%;
+        height: calc(26 * var(--u));
+        background: #ffffff;
+        color: var(--ink);
+        border-radius: calc(5 * var(--u));
+        padding: 0 calc(9 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(10.5 * var(--u));
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* Right photo card (cap photo) */
+      .stats-photo-card {
+        position: relative;
+        border-radius: calc(7 * var(--u));
+        overflow: hidden;
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: calc(10 * var(--u));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .stats-photo-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      .stats-photo-scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.48) 0%,
+          rgba(0, 0, 0, 0.15) 45%,
+          rgba(0, 0, 0, 0.76) 100%
+        );
+        z-index: 1;
+      }
+
+      .stats-photo-top {
+        position: relative;
+        z-index: 2;
+        font-family: var(--font-ui);
+        font-size: calc(9.5 * var(--u));
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        color: rgba(255, 255, 255, 0.88);
+        padding-bottom: calc(6 * var(--u));
+        border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+      }
+
+      .stats-photo-bottom {
+        position: relative;
+        z-index: 2;
+        text-align: right;
+        align-self: flex-end;
+      }
+
+      .stats-num-230 {
+        display: block;
+        font-family: var(--font-ui);
+        font-size: calc(25 * var(--u));
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        font-variant-numeric: tabular-nums;
+        margin-bottom: calc(3 * var(--u));
+      }
+
+      .stats-label-230 {
+        display: block;
+        font-family: var(--font-ui);
+        font-size: calc(9.5 * var(--u));
+        font-weight: 400;
+        line-height: 1.22;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: calc(130 * var(--u));
+      }
+
+      /* Brand plate over the man's back at (532, 444), 364 x 73u */
+      .brand-plate {
+        position: absolute;
+        left: calc(532 * var(--u));
+        top: calc(444 * var(--u));
+        width: calc(364 * var(--u));
+        height: calc(73 * var(--u));
+        background: rgba(20, 20, 20, 0.56);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: calc(10 * var(--u));
+        padding: 0 calc(20 * var(--u));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #ffffff;
+        z-index: 6;
+      }
+
+      .brand-mark-svg {
+        width: calc(24 * var(--u));
+        height: calc(22 * var(--u));
+        flex-shrink: 0;
+      }
+
+      .brand-wordmark {
+        font-family: var(--font-display);
+        font-size: calc(25 * var(--u));
+        font-weight: 700;
+        font-stretch: 122%;
+        font-variation-settings:
+          'wdth' 122,
+          'wght' 700;
+        letter-spacing: 0.04em;
+        color: #ffffff;
+        text-transform: uppercase;
+      }
+
+      .brand-menu-btn {
+        width: calc(32 * var(--u));
+        height: calc(32 * var(--u));
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: calc(5 * var(--u));
+        color: #ffffff;
+        border-radius: calc(6 * var(--u));
+        transition: opacity 0.18s ease;
+      }
+
+      .brand-menu-btn:hover {
+        opacity: 0.78;
+      }
+
+      .brand-menu-line {
+        width: calc(18 * var(--u));
+        height: 1.5px;
+        background: #ffffff;
+        display: block;
+      }
+
+      /* Logos row across the jacket at y 864 */
+      .jacket-logos {
+        position: absolute;
+        left: calc(532 * var(--u));
+        top: calc(864 * var(--u));
+        width: calc(364 * var(--u));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: rgba(255, 255, 255, 0.86);
+        font-family: var(--font-display);
+        font-size: calc(15 * var(--u));
+        font-weight: 600;
+        font-variation-settings:
+          'wdth' 110,
+          'wght' 600;
+        letter-spacing: 0.02em;
+        z-index: 6;
+        pointer-events: none;
+      }
+
+      .jacket-logo-sep {
+        opacity: 0.45;
+        font-size: calc(12 * var(--u));
+      }
+
+      /* Right column:
+         - frosted "True Growth" pill with black check disc at (1216, 258)
+         - "We're available / ● for you", right-aligned, at y 442
+         - "Out Now / Q Industrial / [2025]" with 196u-tall image card
+      */
+      .true-growth-pill {
+        position: absolute;
+        left: calc(1216 * var(--u));
+        top: calc(258 * var(--u));
+        height: calc(42 * var(--u));
+        padding: 0 calc(16 * var(--u)) 0 calc(8 * var(--u));
+        background: rgba(255, 255, 255, 0.58);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        border-radius: calc(999 * var(--u));
+        display: inline-flex;
+        align-items: center;
+        gap: calc(10 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(13.5 * var(--u));
+        font-weight: 500;
+        color: var(--ink);
+        white-space: nowrap;
+        z-index: 6;
+      }
+
+      .check-disc {
+        width: calc(26 * var(--u));
+        height: calc(26 * var(--u));
+        border-radius: 50%;
+        background: var(--ink);
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .check-disc svg {
+        width: calc(12 * var(--u));
+        height: calc(12 * var(--u));
+      }
+
+      .available-note {
+        position: absolute;
+        right: calc(59 * var(--u));
+        top: calc(442 * var(--u));
+        text-align: right;
+        font-family: var(--font-ui);
+        font-size: calc(14 * var(--u));
+        font-weight: 500;
+        line-height: 1.35;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+        z-index: 6;
+      }
+
+      .available-note-line2 {
+        display: inline-flex;
+        align-items: center;
+        gap: calc(6 * var(--u));
+        color: rgba(17, 17, 17, 0.68);
+      }
+
+      /* Out Now / Q Industrial / [2025] */
+      .q-industrial-block {
+        position: absolute;
+        right: calc(59 * var(--u));
+        top: calc(648 * var(--u));
+        width: calc(236 * var(--u));
+        z-index: 6;
+      }
+
+      .q-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: calc(10 * var(--u));
+        font-family: var(--font-ui);
+      }
+
+      .q-out-now {
+        display: block;
+        font-size: calc(11.5 * var(--u));
+        font-weight: 500;
+        color: rgba(17, 17, 17, 0.56);
+        margin-bottom: calc(2 * var(--u));
+      }
+
+      .q-title {
+        display: block;
+        font-size: calc(15 * var(--u));
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        color: var(--ink);
+      }
+
+      .q-year {
+        font-size: calc(12.5 * var(--u));
+        font-weight: 500;
+        color: rgba(17, 17, 17, 0.62);
+      }
+
+      .q-card {
+        position: relative;
+        width: 100%;
+        height: calc(196 * var(--u));
+        border-radius: calc(10 * var(--u));
+        overflow: hidden;
+        background: #141414;
+        cursor: pointer;
+      }
+
+      .q-card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.55);
+        transform-origin: 62% 45%;
+        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .q-card:hover .q-card-img {
+        transform: scale(1.68);
+      }
+
+      .q-card-arrow {
+        position: absolute;
+        top: calc(12 * var(--u));
+        right: calc(12 * var(--u));
+        width: calc(34 * var(--u));
+        height: calc(34 * var(--u));
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.22);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(14 * var(--u));
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .q-card:hover .q-card-arrow {
+        transform: rotate(45deg);
+      }
+
+      .q-progress-track {
+        position: absolute;
+        left: calc(14 * var(--u));
+        right: calc(14 * var(--u));
+        bottom: calc(14 * var(--u));
+        height: 2px;
+        background: rgba(255, 255, 255, 0.35);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .q-progress-fill {
+        width: 68%;
+        height: 100%;
+        background: #ffffff;
+        transform-origin: left center;
+      }
+
+      /* ==========================================================================
+         SECTION 2: BAR & STATEMENT (Pure Black #000)
+         ========================================================================== */
+      .lower-canvas {
+        width: 100%;
+        background: var(--black);
+        color: var(--text-light);
+      }
+
+      .bar-wrap {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .bar-inner {
+        width: calc(1440 * var(--u));
+        height: calc(111 * var(--u));
+        margin: 0 auto;
+        padding: 0 calc(57 * var(--u));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: var(--font-display);
+        font-size: calc(14 * var(--u));
+        font-weight: 600;
+        font-stretch: 118%;
+        font-variation-settings:
+          'wdth' 118,
+          'wght' 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .bar-est-year {
+        color: var(--stmt-grey);
+        margin-left: calc(4 * var(--u));
+      }
+
+      .bar-scroll-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: calc(10 * var(--u));
+        color: var(--text-light);
+        text-transform: uppercase;
+        font-family: var(--font-display);
+        font-size: calc(14 * var(--u));
+        font-weight: 600;
+        font-variation-settings:
+          'wdth' 118,
+          'wght' 600;
+        letter-spacing: 0.04em;
+      }
+
+      .bar-scroll-disc {
+        width: calc(24 * var(--u));
+        height: calc(24 * var(--u));
+        border-radius: 50%;
+        background: #ffffff;
+        color: #000000;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(12 * var(--u));
+        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .bar-scroll-btn:hover .bar-scroll-disc {
+        transform: translateY(2px);
+      }
+
+      .bar-live {
+        color: var(--stmt-grey);
+      }
+
+      /* Statement section: 170u top and 230u bottom padding */
+      .statement-section {
+        width: calc(1440 * var(--u));
+        margin: 0 auto;
+        padding-top: calc(170 * var(--u));
+        padding-bottom: calc(230 * var(--u));
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Centred, 830u wide, 52u, line-height 1.33, tracking -0.028em */
+      .statement-heading {
+        width: calc(830 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(52 * var(--u));
+        font-weight: 500;
+        line-height: 1.33;
+        letter-spacing: -0.028em;
+        color: var(--stmt-grey);
+        text-align: center;
+      }
+
+      .stmt-word {
+        color: var(--stmt-grey);
+        transition: color 0.06s linear;
+        display: inline-block;
+      }
+
+      /* Sub-line: two lines, 23u, 150u below */
+      .statement-subline {
+        margin-top: calc(150 * var(--u));
+        font-family: var(--font-ui);
+        font-size: calc(23 * var(--u));
+        font-weight: 500;
+        line-height: 1.38;
+        letter-spacing: -0.02em;
+        color: var(--text-light);
+        text-align: center;
+      }
+
+      .statement-subline-grey {
+        color: var(--stmt-grey);
+        font-style: normal;
+      }
+
+      /* ==========================================================================
+         SECTION 3: TRUST PANEL (1302 x 429u, 150u bottom padding)
+         ========================================================================== */
+      .trust-section {
+        width: calc(1440 * var(--u));
+        margin: 0 auto;
+        padding-bottom: calc(150 * var(--u));
+      }
+
+      .trust-panel {
+        position: relative;
+        width: calc(1302 * var(--u));
+        height: calc(429 * var(--u));
+        margin: 0 auto;
+        border: 1px solid var(--hairline-high);
+        border-radius: calc(14 * var(--u));
+        padding: calc(51 * var(--u)) 0 calc(51 * var(--u)) calc(48 * var(--u));
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        overflow: hidden;
+        background: #000000;
+      }
+
+      .trust-left {
+        position: relative;
+        width: calc(420 * var(--u));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-shrink: 0;
+        z-index: 2;
+      }
+
+      .trust-heading-wrap {
+        position: relative;
+      }
+
+      .trust-heading {
+        font-family: var(--font-ui);
+        font-size: calc(55 * var(--u));
+        font-weight: 500;
+        line-height: 1.02;
+        letter-spacing: -0.035em;
+        color: var(--text-light);
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Two frosted glass icon tiles (88u, 12u radius, backdrop blur) overlapping heading */
+      .glass-tile {
+        position: absolute;
+        width: calc(88 * var(--u));
+        height: calc(88 * var(--u));
+        border-radius: calc(12 * var(--u));
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        pointer-events: none;
+        box-shadow: 0 calc(8 * var(--u)) calc(24 * var(--u)) rgba(0, 0, 0, 0.35);
+      }
+
+      /* Asterisk tile top right of line 1 */
+      .glass-tile-asterisk {
+        left: calc(254 * var(--u));
+        top: calc(-14 * var(--u));
+      }
+
+      .glass-tile-asterisk svg {
+        width: calc(36 * var(--u));
+        height: calc(36 * var(--u));
+        stroke: #ffffff;
+      }
+
+      /* Four-dot tile over "Businesses" */
+      .glass-tile-dots {
+        left: calc(278 * var(--u));
+        top: calc(156 * var(--u));
+      }
+
+      .dots-grid {
+        display: grid;
+        grid-template-columns: repeat(2, calc(12 * var(--u)));
+        gap: calc(12 * var(--u));
+      }
+
+      .dots-grid span {
+        width: calc(12 * var(--u));
+        height: calc(12 * var(--u));
+        border-radius: 50%;
+        background: #ffffff;
+        display: block;
+      }
+
+      .trust-copy {
+        font-family: var(--font-ui);
+        font-size: calc(14.5 * var(--u));
+        font-weight: 400;
+        line-height: 1.45;
+        letter-spacing: -0.01em;
+        color: rgba(244, 244, 244, 0.68);
+        max-width: calc(345 * var(--u));
+      }
+
+      /* Trust Cards container */
+      .trust-cards {
+        display: flex;
+        align-items: center;
+        gap: calc(14 * var(--u));
+        height: calc(326 * var(--u));
+        margin-right: calc(-18 * var(--u));
+        z-index: 2;
+      }
+
+      .trust-card {
+        height: calc(326 * var(--u));
+        border-radius: calc(8 * var(--u));
+        flex-shrink: 0;
+        transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform;
+      }
+
+      .trust-card:hover,
+      .trust-card.is-lifted {
+        transform: translateY(calc(-6 * var(--u)));
+      }
+
+      /* Card 1: Avatar card, light grey #d6d6d6, 293u */
+      .card-avatars {
+        width: calc(293 * var(--u));
+        background: var(--card-grey);
+        color: var(--ink);
+        padding: calc(24 * var(--u));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .avatars-grid {
+        display: grid;
+        grid-template-columns: repeat(4, calc(48 * var(--u)));
+        gap: calc(12 * var(--u)) calc(14 * var(--u));
+        justify-content: space-between;
+      }
+
+      .avatar-item {
+        width: calc(48 * var(--u));
+        height: calc(48 * var(--u));
+        border-radius: 50%;
+        overflow: hidden;
+        background: #bdbdbd;
+        will-change: transform, opacity;
+      }
+
+      .avatar-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(100%);
+      }
+
+      .card-avatars-footer {
+        display: flex;
+        flex-direction: column;
+        gap: calc(4 * var(--u));
+      }
+
+      .stat-56m {
+        font-family: var(--font-ui);
+        font-size: calc(43 * var(--u));
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.035em;
+        color: var(--ink);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .stat-56m-label {
+        font-family: var(--font-ui);
+        font-size: calc(14 * var(--u));
+        font-weight: 500;
+        color: rgba(17, 17, 17, 0.72);
+      }
+
+      /* Card 2: Awards card, #262626, 298u */
+      .card-awards {
+        width: calc(298 * var(--u));
+        background: var(--card-dark);
+        color: var(--text-light);
+        padding: calc(24 * var(--u));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .awards-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+
+      .stat-10plus {
+        font-family: var(--font-ui);
+        font-size: calc(43 * var(--u));
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.035em;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .awards-title {
+        font-family: var(--font-ui);
+        font-size: calc(13.5 * var(--u));
+        font-weight: 500;
+        color: rgba(244, 244, 244, 0.76);
+      }
+
+      .laurel-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: calc(6 * var(--u)) 0;
+      }
+
+      .laurel-svg {
+        width: calc(176 * var(--u));
+        height: calc(96 * var(--u));
+      }
+
+      .awards-note {
+        font-family: var(--font-ui);
+        font-size: calc(13 * var(--u));
+        font-weight: 400;
+        line-height: 1.38;
+        color: rgba(244, 244, 244, 0.62);
+      }
+
+      /* Card 3: Portrait card, 200u, cut off by panel's right edge */
+      .card-portrait {
+        width: calc(200 * var(--u));
+        overflow: hidden;
+        background: #1c1c1c;
+        position: relative;
+      }
+
+      .card-portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      /* ==========================================================================
+         MONOCHROME INQUIRY & CALL-BOOKING MODAL
+         ========================================================================== */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.72);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .modal-backdrop.is-open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal-dialog {
+        width: 100%;
+        max-width: 480px;
+        background: #0d0d0d;
+        color: #f4f4f4;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 14px;
+        padding: 28px;
+        transform: translateY(10px) scale(0.98);
+        transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .modal-backdrop.is-open .modal-dialog {
+        transform: translateY(0) scale(1);
+      }
+
+      .modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .modal-brand {
+        font-family: var(--font-display);
+        font-size: 16px;
+        font-weight: 700;
+        font-variation-settings:
+          'wdth' 120,
+          'wght' 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .modal-close {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        color: #f4f4f4;
+      }
+
+      .modal-title {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 6px;
+      }
+
+      .modal-subtitle {
+        font-size: 13.5px;
+        color: rgba(244, 244, 244, 0.65);
+        margin-bottom: 20px;
+      }
+
+      .modal-field {
+        margin-bottom: 14px;
+      }
+
+      .modal-label {
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(244, 244, 244, 0.72);
+        margin-bottom: 6px;
+      }
+
+      .modal-input {
+        width: 100%;
+        height: 42px;
+        padding: 0 14px;
+        border-radius: 8px;
+        background: #171717;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #f4f4f4;
+        font-size: 14px;
+      }
+
+      .modal-input:focus {
+        outline: none;
+        border-color: #ffffff;
+      }
+
+      .scope-group {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .scope-btn {
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 12.5px;
+        font-weight: 500;
+        color: rgba(244, 244, 244, 0.78);
+        transition: all 0.16s ease;
+      }
+
+      .scope-btn.is-selected {
+        background: #ffffff;
+        color: #111111;
+        border-color: #ffffff;
+      }
+
+      .modal-submit {
+        width: 100%;
+        height: 44px;
+        margin-top: 8px;
+        background: #ffffff;
+        color: #111111;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .modal-confirmation {
+        display: none;
+        text-align: center;
+        padding: 18px 0 8px;
+      }
+
+      .modal-confirmation.is-visible {
+        display: block;
+      }
+
+      /* ==========================================================================
+         PHONE LAYOUT (<= 760px)
+         Unit: u = 100vw / 390. One column.
+         ========================================================================== */
+      @media (max-width: 760px) {
+        :root {
+          --u: calc(100vw / 390);
+        }
+
+        .hero-artboard {
+          width: 100%;
+          height: auto;
+          padding: calc(20 * var(--u)) calc(18 * var(--u)) calc(32 * var(--u));
+          display: flex;
+          flex-direction: column;
+          gap: calc(20 * var(--u));
+        }
+
+        .hero-top-bar-mobile {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .hero-nav {
+          position: relative;
+          left: auto;
+          top: auto;
+          height: calc(40 * var(--u));
+          padding: calc(3 * var(--u));
+        }
+
+        .nav-pill-slider {
+          top: calc(3 * var(--u));
+          left: calc(3 * var(--u));
+          height: calc(34 * var(--u));
+        }
+
+        .nav-link {
+          height: calc(34 * var(--u));
+          padding: 0 calc(12 * var(--u));
+          font-size: calc(12 * var(--u));
+        }
+
+        .hero-date {
+          display: none;
+        }
+
+        /* Contact Us becomes a 40u square arrow button */
+        .btn-contact {
+          position: relative;
+          left: auto;
+          top: auto;
+          width: calc(40 * var(--u));
+          height: calc(40 * var(--u));
+          border-radius: calc(10 * var(--u));
+          padding: 0;
+        }
+
+        .btn-contact-label {
+          display: none;
+        }
+
+        /* Title, (ABOUT) copy and Book A Call come next */
+        .hero-title-group-mobile {
+          position: relative;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          margin-top: calc(8 * var(--u));
+        }
+
+        .hero-title {
+          position: relative;
+          left: auto;
+          top: auto;
+          font-size: calc(68 * var(--u));
+        }
+
+        .hero-year {
+          position: relative;
+          left: auto;
+          top: auto;
+          font-size: calc(20 * var(--u));
+          margin-top: calc(6 * var(--u));
+        }
+
+        .hero-about-label,
+        .hero-about-copy,
+        .btn-book {
+          position: relative;
+          left: auto;
+          top: auto;
+        }
+
+        .hero-about-copy {
+          width: 100%;
+          max-width: calc(310 * var(--u));
+        }
+
+        .btn-book {
+          align-self: flex-start;
+        }
+
+        /* Full-width photo (470u) with brand plate and logos over it */
+        .hero-photo-stage-mobile {
+          position: relative;
+          width: calc(100% + 36 * var(--u));
+          margin-left: calc(-18 * var(--u));
+          height: calc(470 * var(--u));
+          overflow: hidden;
+        }
+
+        .hero-photo-wrap {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .brand-plate {
+          left: calc(18 * var(--u));
+          right: calc(18 * var(--u));
+          width: auto;
+          top: calc(205 * var(--u));
+          height: calc(62 * var(--u));
+        }
+
+        .jacket-logos {
+          left: calc(24 * var(--u));
+          right: calc(24 * var(--u));
+          width: auto;
+          top: auto;
+          bottom: calc(22 * var(--u));
+        }
+
+        /* Then True Growth, stats frame (two columns) and Out Now */
+        .true-growth-pill {
+          position: relative;
+          left: auto;
+          top: auto;
+          align-self: flex-start;
+        }
+
+        .available-note {
+          position: relative;
+          right: auto;
+          top: auto;
+          text-align: left;
+        }
+
+        .stats-frame {
+          position: relative;
+          left: auto;
+          top: auto;
+          width: 100%;
+          height: calc(204 * var(--u));
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .q-industrial-block {
+          position: relative;
+          right: auto;
+          top: auto;
+          width: 100%;
+        }
+
+        /* Bar & Statement on Phone */
+        .bar-inner {
+          width: 100%;
+          height: calc(74 * var(--u));
+          padding: 0 calc(18 * var(--u));
+          font-size: calc(11 * var(--u));
+        }
+
+        .bar-scroll-btn {
+          font-size: calc(11 * var(--u));
+        }
+
+        .statement-section {
+          width: 100%;
+          padding: calc(80 * var(--u)) calc(18 * var(--u)) calc(96 * var(--u));
+        }
+
+        .statement-heading {
+          width: 100%;
+          font-size: calc(28 * var(--u));
+        }
+
+        .statement-subline {
+          margin-top: calc(56 * var(--u));
+          font-size: calc(17 * var(--u));
+        }
+
+        /* Trust Panel on Phone: stacks heading, paragraph and cards; second glass tile hidden */
+        .trust-section {
+          width: 100%;
+          padding: 0 calc(18 * var(--u)) calc(80 * var(--u));
+        }
+
+        .trust-panel {
+          width: 100%;
+          height: auto;
+          padding: calc(28 * var(--u)) calc(20 * var(--u));
+          flex-direction: column;
+          gap: calc(28 * var(--u));
+        }
+
+        .trust-left {
+          width: 100%;
+          gap: calc(18 * var(--u));
+        }
+
+        .trust-heading {
+          font-size: calc(40 * var(--u));
+        }
+
+        .glass-tile-asterisk {
+          width: calc(64 * var(--u));
+          height: calc(64 * var(--u));
+          left: auto;
+          right: calc(8 * var(--u));
+          top: calc(-6 * var(--u));
+        }
+
+        .glass-tile-dots {
+          display: none;
+        }
+
+        .trust-copy {
+          max-width: 100%;
+        }
+
+        .trust-cards {
+          flex-direction: column;
+          width: 100%;
+          height: auto;
+          margin-right: 0;
+          gap: calc(14 * var(--u));
+        }
+
+        .card-avatars,
+        .card-awards,
+        .card-portrait {
+          width: 100%;
+          height: calc(280 * var(--u));
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <!-- ====================================================================
+           SECTION 1: HERO (1440 x 938u)
+           ==================================================================== -->
+      <header class="hero-band" id="hero">
+        <div class="hero-artboard">
+          <!-- Top Bar wrapper for mobile alignment; desktop children use exact coordinates -->
+          <div class="hero-top-bar-mobile">
+            <!-- Segmented Nav Pill at (57, 61) -->
+            <nav class="hero-nav" id="heroNav" aria-label="Primary Navigation">
+              <span class="nav-pill-slider" id="navSlider" aria-hidden="true"></span>
+              <a href="#hero" class="nav-link is-highlighted" data-nav-idx="0">Home</a>
+              <a href="#manifesto" class="nav-link" data-nav-idx="1">Studio</a>
+              <a href="#works-showcase" class="nav-link" data-nav-idx="2">Works</a>
+              <a href="#trust-panel" class="nav-link" data-nav-idx="3">Blog</a>
+            </nav>
+
+            <!-- Date at (1038, 70) -->
+            <div class="hero-date hero-fade-item">
+              <span class="hero-date-day">Sunday</span>
+              <span class="hero-date-full">17.06 – 27 June 2026</span>
+            </div>
+
+            <!-- Contact Us button at (1237, 63), 144 x 46u -->
+            <button
+              type="button"
+              class="btn-contact hero-fade-item"
+              data-open-modal="contact"
+              aria-label="Contact Us"
+            >
+              <span class="btn-contact-label">Contact Us</span>
+              <span class="btn-arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <!-- Display Title: PURE / DESIGN at (57, 246) and ('25) at (339, 272) -->
+          <div class="hero-title-group-mobile">
+            <h1 class="hero-title" aria-label="PURE DESIGN">
+              <span class="title-line-mask">
+                <span class="title-line-inner" id="titleLine1">PURE</span>
+              </span>
+              <span class="title-line-mask">
+                <span class="title-line-inner" id="titleLine2">DESIGN</span>
+              </span>
+            </h1>
+            <span class="hero-year hero-fade-item">(’25)</span>
+          </div>
+
+          <!-- About block: ● (ABOUT) at y 458, copy, Book A Call at y 584 -->
+          <div class="hero-about-label hero-fade-item">
+            <span class="dot-glyph" aria-hidden="true"></span>
+            <span>(ABOUT)</span>
+          </div>
+          <p class="hero-about-copy hero-fade-item">
+            Building stunning website that<br />
+            every brand deserves to be seen.
+          </p>
+          <button
+            type="button"
+            class="btn-book hero-fade-item"
+            data-open-modal="book"
+          >
+            <span>Book A Call</span>
+            <span class="btn-arrow" aria-hidden="true">↗</span>
+          </button>
+
+          <!-- Center Photo + Brand Plate + Jacket Logos -->
+          <div class="hero-photo-stage-mobile">
+            <div class="hero-photo-wrap" id="heroPhotoWrap">
+              <img
+                src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/7dc8b8f3-4ccb-4599-8ce4-7f7c7881bad9.webp"
+                alt="Back portrait of East Asian creative director in dark technical jacket"
+                class="hero-photo"
+                id="heroPhoto"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+
+            <!-- Dark glass brand plate at (532, 444), 364 x 73u -->
+            <div class="brand-plate hero-fade-item">
+              <svg
+                class="brand-mark-svg"
+                viewBox="0 0 28 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <polygon points="14,2 2,22 13,22" fill="#FFFFFF" />
+                <polygon points="16,7 26,22 16,22" fill="rgba(255,255,255,0.62)" />
+              </svg>
+              <span class="brand-wordmark">ORVANTE</span>
+              <button
+                type="button"
+                class="brand-menu-btn"
+                data-open-modal="menu"
+                aria-label="Open agency inquiry menu"
+              >
+                <span class="brand-menu-line"></span>
+                <span class="brand-menu-line"></span>
+              </button>
+            </div>
+
+            <!-- Fictional wordmarks row at y 864 across the jacket -->
+            <div class="jacket-logos hero-fade-item" aria-label="Featured client partners">
+              <span>Lumon</span>
+              <span class="jacket-logo-sep" aria-hidden="true">·</span>
+              <span>Paperfold</span>
+              <span class="jacket-logo-sep" aria-hidden="true">·</span>
+              <span>Northwind</span>
+            </div>
+          </div>
+
+          <!-- Frosted True Growth pill at (1216, 258) -->
+          <div class="true-growth-pill hero-fade-item">
+            <span class="check-disc" aria-hidden="true">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3 7.2L5.8 10L11 4"
+                  stroke="#FFFFFF"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span>True Growth</span>
+          </div>
+
+          <!-- "We’re available / ● for you" right-aligned at y 442 -->
+          <div class="available-note hero-fade-item">
+            <div>We’re available</div>
+            <div class="available-note-line2">
+              <span class="dot-glyph" aria-hidden="true"></span>
+              <span>for you</span>
+            </div>
+          </div>
+
+          <!-- Stats frame at (57, 693), 341 x 208u, light grey #cdcdcd -->
+          <div class="stats-frame hero-fade-item" id="works-showcase">
+            <!-- Dark card: 400+ / Trusted Partner + 6 fictional partner marks + Book a call bar -->
+            <div class="stats-dark-card">
+              <div class="stats-dark-top">
+                <span class="stats-num-400" id="counter400">400+</span>
+                <span class="stats-label-partner">Trusted Partner</span>
+              </div>
+
+              <div class="partner-marks-grid" aria-label="Partner marks">
+                <span class="partner-chip">
+                  <svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.5" /></svg>
+                  Halcyon
+                </span>
+                <span class="partner-chip">
+                  <svg viewBox="0 0 10 10"><polygon points="5,1 9,9 1,9" /></svg>
+                  Ostra
+                </span>
+                <span class="partner-chip">
+                  <svg viewBox="0 0 10 10"><rect x="2" y="2" width="6" height="6" /></svg>
+                  Fenwick
+                </span>
+                <span class="partner-chip">
+                  <svg viewBox="0 0 10 10"><polygon points="5,1 9,5 5,9 1,5" /></svg>
+                  Monolo
+                </span>
+                <span class="partner-chip">
+                  <svg viewBox="0 0 10 10"><path d="M1,8 L5,2 L9,8 Z" /></svg>
+                  Kitefly
+                </span>
+                <span class="partner-chip">
+                  <svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="2.5" /></svg>
+                  Arbor
+                </span>
+              </div>
+
+              <button
+                type="button"
+                class="dark-card-cta"
+                data-open-modal="partner-call"
+              >
+                <span>Book a call</span>
+                <span class="btn-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+
+            <!-- Photo card (cap photo): Studio Feed · 05/06 + 230+ -->
+            <div class="stats-photo-card">
+              <img
+                src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/a9d3641f-d629-46e5-8d2d-5f75386b803d.webp"
+                alt="Studio Feed monochrome portrait in cap"
+                referrerpolicy="no-referrer"
+              />
+              <div class="stats-photo-scrim" aria-hidden="true"></div>
+              <div class="stats-photo-top">
+                <span>Studio Feed · 05/06</span>
+              </div>
+              <div class="stats-photo-bottom">
+                <span class="stats-num-230" id="counter230">230+</span>
+                <span class="stats-label-230">
+                  Projects successfully launched worldwide
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Out Now / Q Industrial / [2025] -->
+          <div class="q-industrial-block hero-fade-item">
+            <div class="q-header">
+              <div>
+                <span class="q-out-now">Out Now</span>
+                <span class="q-title">Q Industrial</span>
+              </div>
+              <span class="q-year">[2025]</span>
+            </div>
+            <div
+              class="q-card"
+              role="button"
+              tabindex="0"
+              data-open-modal="case-study"
+              aria-label="Explore Q Industrial 2025 case study"
+            >
+              <img
+                src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/9340eb08-877d-4d08-91fb-b70754541d98.webp"
+                alt="Q Industrial abstract motion-blurred monochrome fashion shot"
+                class="q-card-img"
+                referrerpolicy="no-referrer"
+              />
+              <span class="q-card-arrow" aria-hidden="true">↗</span>
+              <div class="q-progress-track" aria-hidden="true">
+                <div class="q-progress-fill" id="qProgressFill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ====================================================================
+           SECTION 2: BAR & STATEMENT (Pure Black #000)
+           ==================================================================== -->
+      <main class="lower-canvas">
+        <div class="bar-wrap" id="manifesto">
+          <div class="bar-inner">
+            <div>
+              <span>EST</span>
+              <span class="bar-est-year">2019</span>
+            </div>
+            <button
+              type="button"
+              class="bar-scroll-btn"
+              id="scrollDownBtn"
+              aria-label="Scroll down to manifesto statement"
+            >
+              <span>SCROLL DOWN</span>
+              <span class="bar-scroll-disc" aria-hidden="true">↓</span>
+            </button>
+            <div class="bar-live">LIVE IN DETAILS</div>
+          </div>
+        </div>
+
+        <section class="statement-section" id="statementSection" aria-label="Agency Manifesto">
+          <h2 class="statement-heading" id="statementHeading">
+            We believe the strongest brands are<br />
+            built through strategy, not just<br />
+            aesthetics. Every campaign is designed<br />
+            to capture attention, inspire action, and<br />
+            create lasting business growth.
+          </h2>
+
+          <p class="statement-subline">
+            Performance-driven marketing, from<br />
+            strategy to execution.
+            <span class="statement-subline-grey">Built for growing brands.</span>
+          </p>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 3: TRUST PANEL (1302 x 429u)
+             ================================================================== -->
+        <section class="trust-section" id="trust-panel" aria-label="Trusted by Growing Businesses">
+          <div class="trust-panel" id="trustPanelBox">
+            <div class="trust-left">
+              <div class="trust-heading-wrap">
+                <h2 class="trust-heading">
+                  Trusted by<br />
+                  Hundreds of<br />
+                  Growing<br />
+                  Businesses
+                </h2>
+
+                <!-- Frosted glass tile 1: Asterisk top right of line 1 -->
+                <div class="glass-tile glass-tile-asterisk" aria-hidden="true">
+                  <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="18" y1="4" x2="18" y2="32" stroke-width="2.5" stroke-linecap="round" />
+                    <line x1="4" y1="18" x2="32" y2="18" stroke-width="2.5" stroke-linecap="round" />
+                    <line x1="8.1" y1="8.1" x2="27.9" y2="27.9" stroke-width="2.5" stroke-linecap="round" />
+                    <line x1="27.9" y1="8.1" x2="8.1" y2="27.9" stroke-width="2.5" stroke-linecap="round" />
+                  </svg>
+                </div>
+
+                <!-- Frosted glass tile 2: Four-dot tile over "Businesses" -->
+                <div class="glass-tile glass-tile-dots" aria-hidden="true">
+                  <div class="dots-grid">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="trust-copy">
+                Every engagement is structured around measurable brand equity,
+                sharper market positioning, and cohesive design systems built to
+                scale across global touchpoints.
+              </p>
+            </div>
+
+            <!-- Three stat/media cards (326u tall, 8u radius) -->
+            <div class="trust-cards">
+              <!-- Card 1: Avatar card (#d6d6d6, 293u) -->
+              <article class="trust-card card-avatars">
+                <div class="avatars-grid" id="avatarsGrid">
+                  <div class="avatar-item">
+                    <img
+                      src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/300f41b1-3de5-4153-afde-06e15e753ad0.webp"
+                      alt="Collaborator portrait 1"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div class="avatar-item">
+                    <img
+                      src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/bfff4cdf-4fda-4491-ada6-62f3b6236492.webp"
+                      alt="Collaborator portrait 2"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div class="avatar-item">
+                    <img
+                      src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/943b121e-fe72-479f-93ae-aa8cd1650f69.webp"
+                      alt="Collaborator portrait 3"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div class="avatar-item">
+                    <img
+                      src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/c673306f-2b81-4c3d-a7d2-3df61d481abb.webp"
+                      alt="Collaborator portrait 4"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div class="avatar-item">
+                    <img
+                      src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/2e4fcf11-d0fc-4f31-8f7a-dfe751777141.webp"
+                      alt="Collaborator portrait 5"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div class="avatar-item">
+                    <img
+                      src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/ab458fcd-4c2c-426f-8213-21cc3c7274be.webp"
+                      alt="Collaborator portrait 6"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div class="avatar-item">
+                    <img
+                      src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/c1fcd833-5ac9-41e9-9352-fead7e64fa24.webp"
+                      alt="Collaborator portrait 7"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div class="avatar-item">
+                    <img
+                      src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/4c2b3307-e555-4633-949c-efd3b7e09d82.webp"
+                      alt="Collaborator portrait 8"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                </div>
+
+                <div class="card-avatars-footer">
+                  <span class="stat-56m" id="counter56m">56M+</span>
+                  <span class="stat-56m-label">Global Collaborations</span>
+                </div>
+              </article>
+
+              <!-- Card 2: Awards card (#262626, 298u) -->
+              <article class="trust-card card-awards" id="awardsCard">
+                <div class="awards-top">
+                  <span class="stat-10plus" id="counter10plus">10+</span>
+                  <span class="awards-title">Industry Awards</span>
+                </div>
+
+                <div class="laurel-wrap">
+                  <svg
+                    class="laurel-svg"
+                    viewBox="0 0 200 106"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="Best Growth Partner 2026 Laurel Badge"
+                  >
+                    <!-- Left laurel branch -->
+                    <path
+                      d="M66 88 C38 78, 24 52, 34 22"
+                      stroke="rgba(244,244,244,0.75)"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                    />
+                    <ellipse cx="32" cy="28" rx="4" ry="8" transform="rotate(-25 32 28)" fill="rgba(244,244,244,0.82)" />
+                    <ellipse cx="29" cy="44" rx="4" ry="8" transform="rotate(-12 29 44)" fill="rgba(244,244,244,0.82)" />
+                    <ellipse cx="33" cy="60" rx="4" ry="8" transform="rotate(8 33 60)" fill="rgba(244,244,244,0.82)" />
+                    <ellipse cx="44" cy="74" rx="4" ry="8" transform="rotate(28 44 74)" fill="rgba(244,244,244,0.82)" />
+                    <ellipse cx="58" cy="84" rx="3.8" ry="7.5" transform="rotate(48 58 84)" fill="rgba(244,244,244,0.82)" />
+
+                    <!-- Right laurel branch -->
+                    <path
+                      d="M134 88 C162 78, 176 52, 166 22"
+                      stroke="rgba(244,244,244,0.75)"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                    />
+                    <ellipse cx="168" cy="28" rx="4" ry="8" transform="rotate(25 168 28)" fill="rgba(244,244,244,0.82)" />
+                    <ellipse cx="171" cy="44" rx="4" ry="8" transform="rotate(12 171 44)" fill="rgba(244,244,244,0.82)" />
+                    <ellipse cx="167" cy="60" rx="4" ry="8" transform="rotate(-8 167 60)" fill="rgba(244,244,244,0.82)" />
+                    <ellipse cx="156" cy="74" rx="4" ry="8" transform="rotate(-28 156 74)" fill="rgba(244,244,244,0.82)" />
+                    <ellipse cx="142" cy="84" rx="3.8" ry="7.5" transform="rotate(-48 142 84)" fill="rgba(244,244,244,0.82)" />
+
+                    <!-- Center badge text -->
+                    <text
+                      x="100"
+                      y="41"
+                      text-anchor="middle"
+                      fill="#F4F4F4"
+                      font-family="Archivo, sans-serif"
+                      font-size="9.5"
+                      font-weight="700"
+                      letter-spacing="1.2"
+                    >
+                      BEST GROWTH
+                    </text>
+                    <text
+                      x="100"
+                      y="54"
+                      text-anchor="middle"
+                      fill="#F4F4F4"
+                      font-family="Archivo, sans-serif"
+                      font-size="9.5"
+                      font-weight="700"
+                      letter-spacing="1.2"
+                    >
+                      PARTNER
+                    </text>
+                    <text
+                      x="100"
+                      y="68"
+                      text-anchor="middle"
+                      fill="rgba(244,244,244,0.65)"
+                      font-family="Inter Tight, sans-serif"
+                      font-size="9"
+                      font-weight="600"
+                      letter-spacing="1.5"
+                    >
+                      2026
+                    </text>
+                  </svg>
+                </div>
+
+                <p class="awards-note">
+                  Honored for brand architecture, digital craftsmanship, and
+                  sustained commercial impact.
+                </p>
+              </article>
+
+              <!-- Card 3: Portrait card (200u, cut off by panel's right edge) -->
+              <article class="trust-card card-portrait">
+                <img
+                  src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/addecc7d-666f-4342-8290-ed7f7cbbffd6.webp"
+                  alt="Side profile portrait in white t-shirt on blue-grey gradient"
+                  referrerpolicy="no-referrer"
+                />
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ======================================================================
+         MONOCHROME INQUIRY & CALL-BOOKING MODAL
+         ====================================================================== -->
+    <div
+      class="modal-backdrop"
+      id="bookingModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <span class="modal-brand">ORVANTE STUDIO</span>
+          <button
+            type="button"
+            class="modal-close"
+            id="closeModalBtn"
+            aria-label="Close inquiry modal"
+          >
+            ✕
+          </button>
+        </div>
+
+        <form id="bookingForm" novalidate>
+          <h3 class="modal-title" id="modalTitle">Initiate a Strategy Call</h3>
+          <p class="modal-subtitle">
+            Share your timeline and scope. Our senior partners respond within 24
+            hours.
+          </p>
+
+          <div class="modal-field">
+            <span class="modal-label">Engagement Focus</span>
+            <div class="scope-group" id="scopeGroup">
+              <button
+                type="button"
+                class="scope-btn is-selected"
+                data-scope="Brand Architecture"
+              >
+                Brand Architecture
+              </button>
+              <button
+                type="button"
+                class="scope-btn"
+                data-scope="Digital Flagship"
+              >
+                Digital Flagship
+              </button>
+              <button
+                type="button"
+                class="scope-btn"
+                data-scope="Campaign Growth"
+              >
+                Campaign Growth
+              </button>
+            </div>
+          </div>
+
+          <div class="modal-field">
+            <label class="modal-label" for="clientName">Your Name</label>
+            <input
+              type="text"
+              id="clientName"
+              class="modal-input"
+              placeholder="Elena Rostova"
+              required
+            />
+          </div>
+
+          <div class="modal-field">
+            <label class="modal-label" for="clientEmail">Work Email</label>
+            <input
+              type="email"
+              id="clientEmail"
+              class="modal-input"
+              placeholder="elena@northwind.studio"
+              required
+            />
+          </div>
+
+          <button type="submit" class="modal-submit">
+            <span>Confirm Discovery Slot</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+        </form>
+
+        <div class="modal-confirmation" id="modalConfirmation">
+          <h3 class="modal-title">Discovery Request Received</h3>
+          <p class="modal-subtitle" id="confirmationSummary">
+            We have reserved a strategy review window and sent calendar details
+            to your inbox.
+          </p>
+          <button type="button" class="modal-submit" id="doneModalBtn">
+            <span>Return to Orvante</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const isRecorder = params.get('rec') === '1';
+        const prefersReducedMotion = window.matchMedia(
+          '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        /* ------------------------------------------------------------------
+           1. NAVIGATION SEGMENTED PILL SLIDER & SMOOTH SCROLL
+           ------------------------------------------------------------------ */
+        const nav = document.getElementById('heroNav');
+        const navSlider = document.getElementById('navSlider');
+        const navLinks = Array.from(nav.querySelectorAll('.nav-link'));
+        let activeNavIndex = 0;
+
+        function movePillTo(index) {
+          const target = navLinks[index];
+          if (!target || !navSlider) return;
+          const navRect = nav.getBoundingClientRect();
+          const linkRect = target.getBoundingClientRect();
+          const padLeft = parseFloat(getComputedStyle(nav).paddingLeft) || 4;
+          const offsetX = linkRect.left - navRect.left - padLeft;
+
+          navSlider.style.width = linkRect.width + 'px';
+          navSlider.style.transform = 'translate3d(' + offsetX + 'px, 0, 0)';
+
+          navLinks.forEach((link, idx) => {
+            link.classList.toggle('is-highlighted', idx === index);
+          });
+        }
+
+        navLinks.forEach((link, idx) => {
+          link.addEventListener('mouseenter', () => movePillTo(idx));
+          link.addEventListener('focus', () => movePillTo(idx));
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            activeNavIndex = idx;
+            movePillTo(activeNavIndex);
+            const targetId = link.getAttribute('href');
+            const targetEl = targetId ? document.querySelector(targetId) : null;
+            if (targetEl) {
+              targetEl.scrollIntoView({
+                behavior: prefersReducedMotion ? 'auto' : 'smooth',
+              });
+            }
+          });
+        });
+
+        nav.addEventListener('mouseleave', () => movePillTo(activeNavIndex));
+        window.addEventListener('resize', () => movePillTo(activeNavIndex));
+        requestAnimationFrame(() => movePillTo(activeNavIndex));
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => movePillTo(activeNavIndex));
+        }
+
+        /* Scroll down button in bar */
+        const scrollDownBtn = document.getElementById('scrollDownBtn');
+        const statementSection = document.getElementById('statementSection');
+        if (scrollDownBtn && statementSection) {
+          scrollDownBtn.addEventListener('click', () => {
+            statementSection.scrollIntoView({
+              behavior: prefersReducedMotion ? 'auto' : 'smooth',
+            });
+          });
+        }
+
+        /* ------------------------------------------------------------------
+           2. PREPARE STATEMENT WORDS (5 LINES, EACH WORD IN ITS OWN SPAN)
+           ------------------------------------------------------------------ */
+        const statementLines = [
+          'We believe the strongest brands are',
+          'built through strategy, not just',
+          'aesthetics. Every campaign is designed',
+          'to capture attention, inspire action, and',
+          'create lasting business growth.',
+        ];
+        const statementHeading = document.getElementById('statementHeading');
+        const wordSpans = [];
+
+        if (statementHeading) {
+          statementHeading.innerHTML = '';
+          statementLines.forEach((line, lineIdx) => {
+            const words = line.split(' ');
+            words.forEach((w, wordIdx) => {
+              const span = document.createElement('span');
+              span.className = 'stmt-word';
+              span.textContent = w;
+              statementHeading.appendChild(span);
+              wordSpans.push(span);
+              if (wordIdx < words.length - 1) {
+                statementHeading.appendChild(document.createTextNode(' '));
+              }
+            });
+            if (lineIdx < statementLines.length - 1) {
+              statementHeading.appendChild(document.createElement('br'));
+            }
+          });
+        }
+
+        /* Interpolate #6f6f6f (111,111,111) -> #f4f4f4 (244,244,244) with 3-word soft edge */
+        function setStatementProgress(progress) {
+          const total = wordSpans.length;
+          const softEdge = 3;
+          const cursor = progress * (total + softEdge);
+
+          for (let i = 0; i < total; i++) {
+            const raw = (cursor - i) / softEdge;
+            const t = raw < 0 ? 0 : raw > 1 ? 1 : raw;
+            const channel = Math.round(111 + (244 - 111) * t);
+            wordSpans[i].style.color =
+              'rgb(' + channel + ',' + channel + ',' + channel + ')';
+          }
+        }
+
+        /* ------------------------------------------------------------------
+           3. COUNTER HELPER
+           ------------------------------------------------------------------ */
+        function animateCounter(el, targetValue, suffix, durationMs) {
+          if (!el) return;
+          if (prefersReducedMotion) {
+            el.textContent = targetValue + suffix;
+            return;
+          }
+          const start = performance.now();
+          function tick(now) {
+            const elapsed = now - start;
+            const p = Math.min(1, elapsed / durationMs);
+            const eased = 1 - Math.pow(1 - p, 3);
+            const current = Math.round(targetValue * eased);
+            el.textContent = current + suffix;
+            if (p < 1) {
+              requestAnimationFrame(tick);
+            }
+          }
+          requestAnimationFrame(tick);
+        }
+
+        /* ------------------------------------------------------------------
+           4. TRUST PANEL ANIMATION TRIGGER (56M+, 10+, 8 AVATARS)
+           ------------------------------------------------------------------ */
+        const counter56m = document.getElementById('counter56m');
+        const counter10plus = document.getElementById('counter10plus');
+        const avatarItems = Array.from(
+          document.querySelectorAll('#avatarsGrid .avatar-item')
+        );
+        let trustAnimated = false;
+
+        function runTrustAnimations(durationMs) {
+          if (trustAnimated) return;
+          trustAnimated = true;
+          animateCounter(counter56m, 56, 'M+', durationMs);
+          animateCounter(counter10plus, 10, '+', durationMs);
+
+          if (!prefersReducedMotion) {
+            avatarItems.forEach((item, idx) => {
+              item.animate(
+                [
+                  { transform: 'scale(0.4)', opacity: 0 },
+                  { transform: 'scale(1)', opacity: 1 },
+                ],
+                {
+                  duration: 520,
+                  delay: idx * 65,
+                  easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                  fill: 'forwards',
+                }
+              );
+            });
+          }
+        }
+
+        /* ------------------------------------------------------------------
+           5. INITIAL LOAD CHOREOGRAPHY (WEB ANIMATIONS API)
+           ------------------------------------------------------------------ */
+        const titleLine1 = document.getElementById('titleLine1');
+        const titleLine2 = document.getElementById('titleLine2');
+        const heroPhotoWrap = document.getElementById('heroPhotoWrap');
+        const heroPhoto = document.getElementById('heroPhoto');
+        const heroFadeItems = Array.from(
+          document.querySelectorAll('.hero-fade-item')
+        );
+        const qProgressFill = document.getElementById('qProgressFill');
+        const counter400 = document.getElementById('counter400');
+        const counter230 = document.getElementById('counter230');
+
+        if (prefersReducedMotion) {
+          setStatementProgress(1);
+          if (counter400) counter400.textContent = '400+';
+          if (counter230) counter230.textContent = '230+';
+          if (counter56m) counter56m.textContent = '56M+';
+          if (counter10plus) counter10plus.textContent = '10+';
+        } else {
+          /* Title lines rise out of masks, 1s, staggered 110ms */
+          [titleLine1, titleLine2].forEach((line, idx) => {
+            if (!line) return;
+            line.animate(
+              [
+                { transform: 'translateY(108%)' },
+                { transform: 'translateY(0%)' },
+              ],
+              {
+                duration: 1000,
+                delay: idx * 110,
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                fill: 'both',
+              }
+            );
+          });
+
+          /* Photo rises 40px, un-blurs and fades in over 1.3s */
+          if (heroPhotoWrap) {
+            heroPhotoWrap.animate(
+              [
+                {
+                  transform: 'translateY(40px)',
+                  filter: 'blur(14px)',
+                  opacity: 0,
+                },
+                {
+                  transform: 'translateY(0px)',
+                  filter: 'blur(0px)',
+                  opacity: 1,
+                },
+              ],
+              {
+                duration: 1300,
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                fill: 'both',
+              }
+            );
+          }
+
+          /* Nav drops in */
+          if (nav) {
+            nav.animate(
+              [
+                { transform: 'translateY(-22px)', opacity: 0 },
+                { transform: 'translateY(0px)', opacity: 1 },
+              ],
+              {
+                duration: 750,
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                fill: 'both',
+              }
+            );
+          }
+
+          /* Every other hero element rises 14px and fades in, staggered 55ms */
+          heroFadeItems.forEach((el, idx) => {
+            el.animate(
+              [
+                { transform: 'translateY(14px)', opacity: 0 },
+                { transform: 'translateY(0px)', opacity: 1 },
+              ],
+              {
+                duration: 720,
+                delay: 140 + idx * 55,
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                fill: 'both',
+              }
+            );
+          });
+
+          /* Q Industrial progress line draws in */
+          if (qProgressFill) {
+            qProgressFill.animate(
+              [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
+              {
+                duration: 1200,
+                delay: 300,
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                fill: 'both',
+              }
+            );
+          }
+
+          /* 400+ and 230+ count up over 1.4s */
+          animateCounter(counter400, 400, '+', 1400);
+          animateCounter(counter230, 230, '+', 1400);
+        }
+
+        /* ------------------------------------------------------------------
+           6. SCROLL OR RECORDER (?rec=1) MODE
+           ------------------------------------------------------------------ */
+        const awardsCard = document.getElementById('awardsCard');
+        const trustPanelBox = document.getElementById('trustPanelBox');
+
+        if (isRecorder && !prefersReducedMotion) {
+          /* Pre-hide avatars until 3.5s */
+          avatarItems.forEach((item) => {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.4)';
+          });
+          setStatementProgress(0);
+
+          const startTime = performance.now();
+
+          /* Photo drifts slowly throughout */
+          if (heroPhoto) {
+            heroPhoto.animate(
+              [
+                { transform: 'translateY(0px)' },
+                { transform: 'translateY(36px)' },
+              ],
+              {
+                duration: 6500,
+                easing: 'linear',
+                fill: 'forwards',
+              }
+            );
+          }
+
+          function recTick(now) {
+            const elapsedSec = (now - startTime) / 1000;
+
+            /* Statement fill: 1.3 - 4.2s */
+            if (elapsedSec <= 1.3) {
+              setStatementProgress(0);
+            } else if (elapsedSec <= 4.2) {
+              setStatementProgress((elapsedSec - 1.3) / (4.2 - 1.3));
+            } else {
+              setStatementProgress(1);
+            }
+
+            /* Trust counters and avatars: 3.5 - 5.2s */
+            if (elapsedSec >= 3.5 && !trustAnimated) {
+              runTrustAnimations(1700);
+            }
+
+            /* Awards card lift: 5.3s */
+            if (elapsedSec >= 5.3 && awardsCard) {
+              awardsCard.classList.add('is-lifted');
+            }
+
+            if (elapsedSec < 7.0) {
+              requestAnimationFrame(recTick);
+            }
+          }
+          requestAnimationFrame(recTick);
+        } else if (!prefersReducedMotion) {
+          /* Standard scroll mode */
+          avatarItems.forEach((item) => {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.4)';
+          });
+
+          function onScrollUpdate() {
+            const scrollY = window.scrollY || window.pageYOffset;
+
+            /* Hero photo drifts at 0.12x scroll */
+            if (heroPhoto) {
+              heroPhoto.style.transform =
+                'translate3d(0, ' + (scrollY * 0.12).toFixed(2) + 'px, 0)';
+            }
+
+            /* Statement fills grey -> white as it scrolls through viewport */
+            if (statementHeading) {
+              const rect = statementHeading.getBoundingClientRect();
+              const vh = window.innerHeight || 800;
+              const startY = vh * 0.85;
+              const endY = vh * 0.22;
+              const p = (startY - rect.top) / (startY - endY);
+              const clamped = p < 0 ? 0 : p > 1 ? 1 : p;
+              setStatementProgress(clamped);
+            }
+          }
+
+          window.addEventListener('scroll', onScrollUpdate, { passive: true });
+          window.addEventListener('resize', onScrollUpdate);
+          onScrollUpdate();
+
+          /* Trust panel entry observer */
+          if ('IntersectionObserver' in window && trustPanelBox) {
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    runTrustAnimations(1500);
+                    observer.disconnect();
+                  }
+                });
+              },
+              { threshold: 0.22 }
+            );
+            observer.observe(trustPanelBox);
+          } else {
+            runTrustAnimations(1500);
+          }
+        }
+
+        /* ------------------------------------------------------------------
+           7. MONOCHROME INQUIRY & CALL-BOOKING MODAL CONTROLLER
+           ------------------------------------------------------------------ */
+        const bookingModal = document.getElementById('bookingModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const doneModalBtn = document.getElementById('doneModalBtn');
+        const bookingForm = document.getElementById('bookingForm');
+        const modalConfirmation = document.getElementById('modalConfirmation');
+        const confirmationSummary = document.getElementById(
+          'confirmationSummary'
+        );
+        const modalTitle = document.getElementById('modalTitle');
+        const scopeButtons = Array.from(
+          document.querySelectorAll('#scopeGroup .scope-btn')
+        );
+        let selectedScope = 'Brand Architecture';
+
+        function openModal(triggerContext) {
+          if (!bookingModal) return;
+          bookingForm.style.display = 'block';
+          modalConfirmation.classList.remove('is-visible');
+          if (triggerContext === 'case-study') {
+            modalTitle.textContent = 'Q Industrial [2025] — Request Dossier';
+          } else if (triggerContext === 'contact') {
+            modalTitle.textContent = 'Direct Studio Inquiry';
+          } else {
+            modalTitle.textContent = 'Initiate a Strategy Call';
+          }
+          bookingModal.classList.add('is-open');
+        }
+
+        function closeModal() {
+          if (!bookingModal) return;
+          bookingModal.classList.remove('is-open');
+        }
+
+        document.querySelectorAll('[data-open-modal]').forEach((trigger) => {
+          trigger.addEventListener('click', () => {
+            openModal(trigger.getAttribute('data-open-modal'));
+          });
+          trigger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openModal(trigger.getAttribute('data-open-modal'));
+            }
+          });
+        });
+
+        scopeButtons.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            selectedScope = btn.getAttribute('data-scope') || 'Brand Architecture';
+            scopeButtons.forEach((b) =>
+              b.classList.toggle('is-selected', b === btn)
+            );
+          });
+        });
+
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+        if (doneModalBtn) doneModalBtn.addEventListener('click', closeModal);
+        if (bookingModal) {
+          bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) closeModal();
+          });
+        }
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeModal();
+        });
+
+        if (bookingForm) {
+          bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nameInput = document.getElementById('clientName');
+            const emailInput = document.getElementById('clientEmail');
+            const nameVal = (nameInput.value || '').trim();
+            const emailVal = (emailInput.value || '').trim();
+
+            if (!nameVal) {
+              nameInput.focus();
+              return;
+            }
+            if (!emailVal || !emailVal.includes('@')) {
+              emailInput.focus();
+              return;
+            }
+
+            bookingForm.style.display = 'none';
+            confirmationSummary.textContent =
+              'Thank you, ' +
+              nameVal +
+              '. Your ' +
+              selectedScope +
+              ' brief has been routed to our senior partners (' +
+              emailVal +
+              ').';
+            modalConfirmation.classList.add('is-visible');
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
